@@ -1,3 +1,4 @@
+import React from "react";
 import { ArrowRight, ChevronRight } from "lucide-react";
 
 export default function LighthousePointAdvisorsSite() {
