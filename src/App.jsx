@@ -129,8 +129,9 @@ export default function LighthousePointAdvisorsSite() {
       </header>
 
       <main>
-        <section className="mx-auto max-w-7xl px-6 py-24 md:py-32 bg-[url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')] bg-cover bg-center rounded-3xl">
-          <div className="max-w-5xl">
+        <section className="relative mx-auto max-w-7xl px-6 py-24 md:py-32 bg-[url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')] bg-cover bg-center rounded-3xl overflow-hidden">
+          <div className="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
+          <div className="relative max-w-5xl">
             <div className="inline-flex items-center rounded-full border border-slate-200 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
               Private Equity • Value Creation • Operational Improvement
             </div>
