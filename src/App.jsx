@@ -2,6 +2,25 @@ import React from "react";
 import { ArrowRight, ChevronRight } from "lucide-react";
 
 export default function LighthousePointAdvisorsSite() {
+  // simple fade-in effect
+  React.useEffect(() => {
+    // set page title
+    document.title = "Lighthouse Point Advisors | Strategic Advisory";
+
+    
+
+    // simple fade-in effect
+    const els = document.querySelectorAll('.animate-fade-in');
+    els.forEach((el, i) => {
+      el.style.opacity = 0;
+      el.style.transform = 'translateY(10px)';
+      setTimeout(() => {
+        el.style.transition = 'all 0.6s ease';
+        el.style.opacity = 1;
+        el.style.transform = 'translateY(0px)';
+      }, i * 120);
+    });
+  }, []);
   const serviceCategories = [
     {
       title: "Strategy & Value Creation",
@@ -118,7 +137,7 @@ export default function LighthousePointAdvisorsSite() {
       </header>
 
       <main>
-        <section className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl bg-[url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')] bg-cover bg-center px-6 py-24 md:py-32">
+        <section className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl shadow-lg bg-[url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')] bg-cover bg-center px-6 py-24 md:py-32">
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/55 to-black/45" />
           <div className="relative max-w-5xl text-white">
             <div className="inline-flex items-center rounded-full border border-white/30 bg-black/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white/90 backdrop-blur-sm">
@@ -168,7 +187,7 @@ export default function LighthousePointAdvisorsSite() {
             </p>
           </div>
 
-          <div className="grid gap-10 md:grid-cols-2">
+          <div className="grid gap-10 md:grid-cols-2 animate-fade-in">
             {serviceCategories.map((category) => (
               <div key={category.title} className="rounded-2xl border border-slate-200 p-6 transition duration-200 hover:-translate-y-0.5 hover:shadow-md">
                 <h3 className="mb-4 text-lg font-semibold">{category.title}</h3>
