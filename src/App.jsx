@@ -129,7 +129,7 @@ export default function LighthousePointAdvisorsSite() {
       </header>
 
       <main>
-        <section className="mx-auto max-w-7xl px-6 py-24 md:py-32">
+        <section className="mx-auto max-w-7xl px-6 py-24 md:py-32 bg-[url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')] bg-cover bg-center rounded-3xl">
           <div className="max-w-5xl">
             <div className="inline-flex items-center rounded-full border border-slate-200 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
               Private Equity • Value Creation • Operational Improvement
@@ -141,6 +141,9 @@ export default function LighthousePointAdvisorsSite() {
               Lighthouse Point Advisors works with private equity firms and middle-market companies to drive operational improvement, strategic growth, and scalable performance.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
+              <a href="https://www.linkedin.com/in/greg-leidner-9a7136/" target="_blank" rel="noopener noreferrer" className="rounded-2xl border border-slate-300 px-6 py-3 hover:bg-slate-100">
+                View LinkedIn
+              </a>
               <a href="#services" className="flex items-center gap-2 rounded-2xl bg-slate-900 px-6 py-3 text-white">
                 Explore Services <ArrowRight className="h-4 w-4" />
               </a>
@@ -198,7 +201,7 @@ export default function LighthousePointAdvisorsSite() {
                 Greg has led businesses through significant growth, operational transformation, and multiple successful ownership transitions, bringing a practical, operator-led perspective to every engagement focused on execution and measurable outcomes.
                 <br />
                 <br />
-                Greg lives in Florida with his wife and three children. When he’s not driving his kids to and from their various activities (which is most of the time), he enjoys fishing, golf, and tennis.
+                He lives in Florida with his wife and three children. When he’s not driving his kids to and from their various activities (which is most of the time), he enjoys fishing, golf, and tennis.
               </p>
             </div>
             <div>
@@ -220,8 +223,8 @@ export default function LighthousePointAdvisorsSite() {
         <section id="contact" className="mx-auto max-w-7xl px-6 py-20">
           <div className="rounded-2xl border border-slate-200 p-10 transition duration-200 hover:shadow-sm">
             <h2 className="text-2xl font-semibold tracking-tight">Contact</h2>
-            <a href="mailto:gleidner@gmail.com" className="mt-4 inline-block text-slate-900 underline">
-              gleidner@gmail.com
+            <a href="mailto:greg@lighthousepointadv.com" className="mt-4 inline-block text-slate-900 underline">
+              greg@lighthousepointadv.com
             </a>
           </div>
         </section>
