@@ -1,4 +1,72 @@
-th              <defs>
+import React from "react";
+import { ArrowRight, ChevronRight } from "lucide-react";
+
+export default function LighthousePointAdvisorsSite() {
+  const serviceCategories = [
+    {
+      title: "Strategy & Value Creation",
+      items: [
+        "Define value-creation priorities and execution roadmap",
+        "Develop 100-day plans and multi-year growth strategies",
+        "Source and engage off-market acquisition targets",
+        "Map competitive landscape to inform M&A and pricing",
+      ],
+    },
+    {
+      title: "Operations & Integration",
+      items: [
+        "Lead post-acquisition integration and operating alignment",
+        "Optimize network, logistics, and service-level performance",
+        "Capture procurement synergies across pricing and terms",
+        "Standardize sourcing, vendors, and purchasing discipline",
+      ],
+    },
+    {
+      title: "Commercial & Growth",
+      items: [
+        "Drive pricing discipline and margin expansion",
+        "Improve sales structure, incentives, and segmentation",
+        "Enhance customer experience and retention",
+        "Align commercial execution with PE performance expectations",
+      ],
+    },
+    {
+      title: "Organization & Leadership",
+      items: [
+        "Assess and upgrade organizational structure and talent",
+        "Coach leadership teams in performance-driven environments",
+        "Implement KPIs, dashboards, and operating cadence",
+        "Support change management and cultural transition",
+        "Provide interim leadership during critical transitions",
+      ],
+    },
+  ];
+
+  const founderHighlights = [
+    <>Led a national <span className="font-semibold">industrial distribution</span> platform</>,
+    <><span className="font-semibold">265</span> employees across multiple locations</>,
+    <><span className="font-semibold">60+</span> tractors &amp; trailers</>,
+    <><span className="font-semibold">4M+</span> miles driven annually</>,
+    <><span className="font-semibold">$50M to $500M+</span> revenue growth track record</>,
+    <><span className="font-semibold">&gt;$50M</span> working capital improvement</>,
+    <><span className="font-semibold">&gt;$9M</span> synergies captured</>,
+    <>Multiple successful ownership transitions</>,
+  ];
+
+  return (
+    <div className="min-h-screen bg-white text-slate-900">
+      <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <div className="flex items-center gap-3">
+            <svg
+              width="170"
+              height="40"
+              viewBox="0 0 170 40"
+              className="shrink-0"
+              aria-label="Lighthouse Point Advisors logo"
+              role="img"
+            >
+              <defs>
                 <linearGradient id="lpaBeamRight" x1="0" y1="0" x2="1" y2="0">
                   <stop offset="0%" stopColor="#caa55b" stopOpacity="0.95" />
                   <stop offset="70%" stopColor="#caa55b" stopOpacity="0.35" />
@@ -61,8 +129,8 @@ th              <defs>
       </header>
 
       <main>
-        <section className="relative mx-auto max-w-7xl px-6 py-24 md:py-32 bg-[url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')] bg-cover bg-center rounded-3xl overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/55 to-black/45"></div>
+        <section className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl bg-[url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')] bg-cover bg-center px-6 py-24 md:py-32">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/55 to-black/45" />
           <div className="relative max-w-5xl text-white">
             <div className="inline-flex items-center rounded-full border border-white/30 bg-black/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white/90 backdrop-blur-sm">
               Private Equity • Value Creation • Operational Improvement
@@ -73,8 +141,13 @@ th              <defs>
             <p className="mt-8 max-w-3xl text-lg leading-8 text-white/90">
               Lighthouse Point Advisors works with private equity firms and middle-market companies to drive operational improvement, strategic growth, and scalable performance.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <a href="https://www.linkedin.com/in/greg-leidner-9a7136/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-2xl border border-white/30 bg-black/20 px-6 py-3 text-white hover:bg-black/30 backdrop-blur-sm">
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <a
+                href="https://www.linkedin.com/in/greg-leidner-9a7136/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-2xl border border-white/30 bg-black/20 px-6 py-3 text-white hover:bg-black/30 backdrop-blur-sm"
+              >
                 View LinkedIn
               </a>
               <a href="#services" className="flex items-center gap-2 rounded-2xl bg-white px-6 py-3 font-medium text-slate-900 hover:bg-slate-100">
@@ -134,7 +207,7 @@ th              <defs>
                 Greg has led businesses through significant growth, operational transformation, and multiple successful ownership transitions, bringing a practical, operator-led perspective to every engagement focused on execution and measurable outcomes.
                 <br />
                 <br />
-                He lives in Florida with his wife and three children. When he’s not driving his kids to and from their various activities (which is most of the time), he enjoys fishing, golf, and tennis.
+                Greg lives in Florida with his wife and three children. When he’s not driving his kids to and from their various activities (which is most of the time), he enjoys fishing, golf, and tennis.
               </p>
             </div>
             <div>
