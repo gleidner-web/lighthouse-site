@@ -62,25 +62,25 @@ th              <defs>
 
       <main>
         <section className="relative mx-auto max-w-7xl px-6 py-24 md:py-32 bg-[url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')] bg-cover bg-center rounded-3xl overflow-hidden">
-          <div className="absolute inset-0 bg-black/40"></div>
-          <div className="relative max-w-5xl">
-            <div className="inline-flex items-center rounded-full border border-slate-200 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/55 to-black/45"></div>
+          <div className="relative max-w-5xl text-white">
+            <div className="inline-flex items-center rounded-full border border-white/30 bg-black/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white/90 backdrop-blur-sm">
               Private Equity • Value Creation • Operational Improvement
             </div>
             <h1 className="mt-8 text-5xl font-semibold leading-tight tracking-tight md:text-7xl">
               Strategic advisory grounded in operating experience.
             </h1>
-            <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-600">
+            <p className="mt-8 max-w-3xl text-lg leading-8 text-white/90">
               Lighthouse Point Advisors works with private equity firms and middle-market companies to drive operational improvement, strategic growth, and scalable performance.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <a href="https://www.linkedin.com/in/greg-leidner-9a7136/" target="_blank" rel="noopener noreferrer" className="rounded-2xl border border-slate-300 px-6 py-3 hover:bg-slate-100">
+              <a href="https://www.linkedin.com/in/greg-leidner-9a7136/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-2xl border border-white/30 bg-black/20 px-6 py-3 text-white hover:bg-black/30 backdrop-blur-sm">
                 View LinkedIn
               </a>
-              <a href="#services" className="flex items-center gap-2 rounded-2xl bg-slate-900 px-6 py-3 text-white">
+              <a href="#services" className="flex items-center gap-2 rounded-2xl bg-white px-6 py-3 font-medium text-slate-900 hover:bg-slate-100">
                 Explore Services <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="#founder" className="rounded-2xl border border-slate-300 px-6 py-3">
+              <a href="#founder" className="rounded-2xl border border-white/30 px-6 py-3 text-white hover:bg-black/20">
                 Meet the Founder
               </a>
             </div>
@@ -164,7 +164,7 @@ th              <defs>
                 href="https://www.linkedin.com/in/greg-leidner-9a7136/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-2xl border border-slate-300 px-5 py-2.5 hover:bg-slate-100"
+                className="inline-flex items-center gap-2 rounded-2xl bg-slate-900 px-5 py-2.5 text-white hover:bg-slate-800"
               >
                 View LinkedIn
               </a>
