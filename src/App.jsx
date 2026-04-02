@@ -1,4 +1,5 @@
 import React from "react";
+import gregPhoto from "./greg.jpeg";
 import { ArrowRight, ChevronRight } from "lucide-react";
 
 export default function LighthousePointAdvisorsSite() {
@@ -243,7 +244,7 @@ export default function LighthousePointAdvisorsSite() {
             <div className="space-y-6">
               <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
                 <img
-                  src="/greg.jpeg"
+                  src={gregPhoto}
                   alt="Greg Leidner"
                   className="h-[26rem] w-full object-cover"
                 />
