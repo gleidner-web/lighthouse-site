@@ -246,7 +246,7 @@ export default function LighthousePointAdvisorsSite() {
                 <img
                   src={gregPhoto}
                   alt="Greg Leidner"
-                  className="h-[26rem] w-full object-cover"
+                  className="h-[26rem] w-full object-cover object-top"
                 />
               </div>
               <img
