@@ -20,16 +20,16 @@ export default function LighthousePointAdvisorsSite() {
 
   const serviceCategories = [
     {
-      title: "Pre-Transaction Preparation",
+      title: "Performance & Strategic Readiness",
       items: [
-        "Clarify value-creation priorities before a process begins",
-        "Assess organizational readiness and leadership gaps",
-        "Prepare the business for a smoother ownership transition",
-        "Help CEOs think through what changes after closing",
+        "Clarify the highest-impact priorities to improve business performance",
+        "Assess organizational readiness, leadership gaps, and execution risks",
+        "Strengthen the business for scale, resilience, or future strategic options",
+        "Help CEOs think through what needs to change to shift trajectory",
       ],
     },
     {
-      title: "Post-Transaction Integration",
+      title: "Ownership Transition Support",
       items: [
         "Support leadership teams through the first 100 days",
         "Establish operating cadence, KPIs, and decision-making rhythm",
@@ -58,10 +58,10 @@ export default function LighthousePointAdvisorsSite() {
   ];
 
   const ceoMoments = [
-    "Preparing for a potential sale or recapitalization",
-    "Navigating the first months after a completed transaction",
-    "Adjusting to a new board, reporting cadence, and ownership expectations",
-    "Scaling the business without losing operational control",
+    "Performance has plateaued and needs to improve",
+    "The business is scaling but systems and structure have not kept up",
+    "Leadership teams need to operate at a higher level",
+    "Preparing for a transaction or evaluating long-term strategic options",
   ];
 
   return (
@@ -144,13 +144,13 @@ export default function LighthousePointAdvisorsSite() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/55 to-black/45" />
           <div className="relative max-w-5xl text-white">
             <div className="inline-flex items-center rounded-full border border-white/30 bg-black/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white/90 backdrop-blur-sm">
-              For CEOs Preparing for Change
+              For CEOs Driving Meaningful Change
             </div>
             <h1 className="mt-8 text-5xl font-semibold leading-tight tracking-tight md:text-7xl">
-              Practical guidance for CEOs preparing for an exit or leading through life after a transaction.
+              Practical guidance for CEOs looking to change the trajectory of their business.
             </h1>
             <p className="mt-8 max-w-3xl text-lg leading-8 text-white/90">
-              Lighthouse Point Advisors helps leadership teams navigate the transition from founder-led or privately held businesses into more structured ownership environments, with hands-on support before a transaction, immediately after close, and during the push to build a stronger business.
+              Lighthouse Point Advisors helps leadership teams improve performance, scale effectively, and navigate moments of transition. That can mean preparing for an exit or adjusting to new ownership, but it can also mean building a stronger, more scalable business for the long term.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a href="#services" className="flex items-center gap-2 rounded-2xl bg-white px-6 py-3 font-medium text-slate-900 hover:bg-slate-100">
@@ -176,17 +176,17 @@ export default function LighthousePointAdvisorsSite() {
             <div>
               <h2 className="text-3xl font-semibold tracking-tight">About</h2>
               <p className="mt-4 text-lg leading-8 text-slate-700">
-                Lighthouse Point Advisors was built for CEOs and leadership teams at moments of meaningful transition.
+                Lighthouse Point Advisors was built for CEOs and leadership teams looking to materially improve the trajectory of their business.
               </p>
               <div className="mt-6 space-y-5 text-base leading-8 text-slate-600">
                 <p>
-                  For some companies, that means preparing the business for a potential exit, recapitalization, or new ownership structure. For others, it means figuring out how to lead effectively once the transaction is done and expectations, reporting, and pace all change.
+                  For some companies, that includes preparing the business for a potential exit, recapitalization, or new ownership structure. For many others, it means improving execution, strengthening leadership, and building a more scalable operating model regardless of ownership plans.
                 </p>
                 <p>
                   The firm brings an operator’s perspective to those moments. Rather than offering abstract advice, Lighthouse Point Advisors helps management teams think clearly, prioritize the right actions, and execute with discipline during periods that can feel exciting, unfamiliar, and demanding all at once.
                 </p>
                 <p>
-                  While private equity sponsors may also find the work highly relevant, the focus is on helping CEOs and leadership teams succeed in the real day-to-day environment of transition, integration, performance improvement, and growth.
+                  While private equity sponsors may also find the work highly relevant, the focus is on helping CEOs and leadership teams succeed in the real day-to-day work of performance improvement, organizational change, operational execution, and growth.
                 </p>
               </div>
             </div>
@@ -199,7 +199,7 @@ export default function LighthousePointAdvisorsSite() {
               />
               <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
                 <div className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
-                  Especially useful for CEOs who are
+                  Where Lighthouse Point typically helps
                 </div>
                 <div className="mt-5 space-y-3 text-sm text-slate-600">
                   {ceoMoments.map((item, idx) => (
@@ -218,7 +218,7 @@ export default function LighthousePointAdvisorsSite() {
           <div className="mb-12 max-w-3xl">
             <h2 className="text-3xl font-semibold tracking-tight">Services</h2>
             <p className="mt-4 text-slate-600">
-              Support designed for CEOs and leadership teams facing a transaction, adapting to new ownership, or building a stronger operating model after close.
+              Support designed for CEOs and leadership teams focused on performance, scale, and meaningful change — with or without a transaction.
             </p>
           </div>
 
@@ -319,7 +319,7 @@ export default function LighthousePointAdvisorsSite() {
           <div className="rounded-2xl border border-slate-200 p-10 transition duration-200 hover:shadow-sm">
             <h2 className="text-2xl font-semibold tracking-tight">Contact</h2>
             <p className="mt-3 max-w-2xl text-slate-600">
-              If you are a CEO preparing for a transition or working through the realities of new ownership, Lighthouse Point Advisors would be glad to start a conversation.
+              If you are a CEO looking to improve performance, strengthen execution, or navigate a period of meaningful change, Lighthouse Point Advisors would be glad to start a conversation.
             </p>
             <a href="mailto:greg@lighthousepointadv.com" className="mt-4 inline-block text-slate-900 underline">
               greg@lighthousepointadv.com
