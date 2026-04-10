@@ -6,6 +6,26 @@ export default function LighthousePointAdvisorsSite() {
   React.useEffect(() => {
     document.title = "Lighthouse Point Advisors | Strategic Advisory";
 
+    const existingScript = document.querySelector(
+      'script[src="https://www.googletagmanager.com/gtag/js?id=G-6YC2WXL1S3"]'
+    );
+
+    if (!existingScript) {
+      const script1 = document.createElement("script");
+      script1.async = true;
+      script1.src = "https://www.googletagmanager.com/gtag/js?id=G-6YC2WXL1S3";
+      document.head.appendChild(script1);
+
+      const script2 = document.createElement("script");
+      script2.innerHTML = `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6YC2WXL1S3');
+      `;
+      document.head.appendChild(script2);
+    }
+
     const els = document.querySelectorAll(".animate-fade-in");
     els.forEach((el, i) => {
       el.style.opacity = 0;
