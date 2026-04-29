@@ -10,7 +10,7 @@ import {
 
 export default function LighthousePointAdvisorsSite() {
   React.useEffect(() => {
-    document.title = "Lighthouse Point Advisors | Strategic Advisory for CEOs";
+    document.title = "Lighthouse Point Advisors | Strategic Advisory Services for CEOs";
 
     const existingScript = document.querySelector(
       'script[src="https://www.googletagmanager.com/gtag/js?id=G-6YC2WXL1S3"]'
@@ -103,13 +103,6 @@ export default function LighthousePointAdvisorsSite() {
     "Focus leadership attention on the highest-value issues",
     "Translate strategy into practical execution",
     "Support management teams through moments that carry real pressure",
-  ];
-
-const experienceStats = [
-  { value: "$50M to $500M+", label: "Revenue growth" },
-  { value: "Nationwide", label: "Operational footprint expansion" },
-  { value: ">$50M", label: "Working capital improvement" },
-  { value: "Family → PE → Public", label: "Ownership evolution" },
   ];
 
   return (
@@ -232,13 +225,13 @@ const experienceStats = [
                 </div>
 
                 <h1 className="mt-8 max-w-4xl text-5xl font-semibold leading-[1.02] tracking-tight text-white md:text-7xl">
-                  Practical advisory for leaders facing moments that shape enterprise value.
+                  Practical guidance for CEOs navigating high-stakes moments.
                 </h1>
 
                 <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
-                  Lighthouse Point Advisors helps CEOs improve performance,
-                  strengthen execution, and navigate growth, transition, and
-                  ownership change with greater clarity and discipline.
+                  We work directly with CEOs and leadership teams to improve
+                  performance, strengthen execution, and navigate growth,
+                  transition, and ownership change.
                 </p>
 
                 <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -269,21 +262,25 @@ const experienceStats = [
 
                 <div className="mt-12 grid gap-6 border-t border-white/10 pt-8 text-sm text-slate-300 md:grid-cols-3">
                   <div>
-                    <div className="font-semibold text-white">Operator-led perspective</div>
+                    <div className="font-semibold text-white">Operator perspective</div>
                     <div className="mt-2 leading-7">
-                      Built from firsthand leadership through growth, complexity, and ownership transition.
+                      Built from firsthand experience leading through growth,
+                      complexity, and ownership change.
                     </div>
                   </div>
+
                   <div>
-                    <div className="font-semibold text-white">Practical, not abstract</div>
+                    <div className="font-semibold text-white">Direct involvement</div>
                     <div className="mt-2 leading-7">
-                      Focused on decisions, priorities, and execution that actually move the business.
+                      You work directly with Greg, not a team.
                     </div>
                   </div>
+
                   <div>
-                    <div className="font-semibold text-white">Selective and senior-level</div>
+                    <div className="font-semibold text-white">Focused and practical</div>
                     <div className="mt-2 leading-7">
-                      Designed for CEOs and leadership teams working through consequential inflection points.
+                      Clear priorities, straightforward thinking, and support
+                      where it matters most.
                     </div>
                   </div>
                 </div>
@@ -295,20 +292,33 @@ const experienceStats = [
                     Representative experience
                   </div>
 
-                  <div className="mt-6 grid gap-5">
-                    {experienceStats.map((stat) => (
-                      <div
-                        key={stat.label}
-                        className="border-b border-white/10 pb-4 last:border-none last:pb-0"
-                      >
-                        <div className="text-3xl font-semibold tracking-tight text-white">
-                          {stat.value}
-                        </div>
-                        <div className="mt-1 text-sm leading-6 text-slate-300">
-                          {stat.label}
-                        </div>
+                  <div className="mt-6 space-y-5 text-sm text-slate-300">
+                    <div className="border-b border-white/10 pb-4">
+                      <div className="text-3xl font-semibold tracking-tight text-white">
+                        $50M → $500M+
                       </div>
-                    ))}
+                      <div className="mt-1 leading-6">Revenue growth</div>
+                    </div>
+
+                    <div className="border-b border-white/10 pb-4">
+                      <div className="text-3xl font-semibold tracking-tight text-white">
+                        National scale
+                      </div>
+                      <div className="mt-1 leading-6">Expanded operating footprint</div>
+                    </div>
+
+                    <div className="border-b border-white/10 pb-4">
+                      <div className="text-3xl font-semibold tracking-tight text-white">
+                        &gt;$50M
+                      </div>
+                      <div className="mt-1 leading-6">Working capital improvement</div>
+                    </div>
+
+                    <div>
+                      <div className="text-lg font-medium leading-7 text-white">
+                        Family Owned → Private Equity → Public Company
+                      </div>
+                    </div>
                   </div>
 
                   <div className="mt-6 rounded-2xl border border-white/10 bg-black/20 p-4 text-sm leading-7 text-slate-300">
@@ -333,10 +343,7 @@ const experienceStats = [
           </div>
         </section>
 
-        <section
-          id="who-we-help"
-          className="mx-auto max-w-7xl px-6 py-24"
-        >
+        <section id="who-we-help" className="mx-auto max-w-7xl px-6 py-24">
           <div className="grid gap-14 md:grid-cols-[0.95fr_1.05fr] md:items-start">
             <div data-reveal>
               <div className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
