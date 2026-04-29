@@ -105,11 +105,11 @@ export default function LighthousePointAdvisorsSite() {
     "Support management teams through moments that carry real pressure",
   ];
 
-  const experienceStats = [
-    { value: "$50M to $500M+", label: "Revenue growth" },
-    { value: ">$50M", label: "Working capital improvement" },
-    { value: ">$9M", label: "Synergies captured" },
-    { value: "265", label: "Employees led across multiple locations" },
+const experienceStats = [
+  { value: "$50M to $500M+", label: "Revenue growth" },
+  { value: "Nationwide", label: "Operational footprint expansion" },
+  { value: ">$50M", label: "Working capital improvement" },
+  { value: "Family → PE → Public", label: "Ownership evolution" },
   ];
 
   return (
