@@ -242,7 +242,7 @@ export default function Assessment() {
                 Business Health Scorecard
               </div>
               <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
-                A ten-question read on how your business actually stands.
+                How healthy is your business, really?
               </h1>
               <p className="mt-4 text-base leading-7 text-slate-600">
                 Two minutes, ten questions. This looks at your business through the
