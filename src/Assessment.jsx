@@ -86,10 +86,10 @@ const QUESTIONS = [
   },
   {
     dimension: "Growth Trajectory",
-    text: "Over the last three years, has your growth been mostly organic, mostly acquired, or flat?",
+    text: "Over the last three years, has your growth mostly come from winning more business, or from buying other companies?",
     options: [
-      { label: "Steady organic growth", points: 4 },
-      { label: "Mixed organic and acquired", points: 3 },
+      { label: "Steady growth from winning more business", points: 4 },
+      { label: "A mix of growth and acquiring other companies", points: 3 },
       { label: "Mostly flat", points: 2 },
       { label: "Declining", points: 1 },
     ],
@@ -390,7 +390,8 @@ export default function Assessment() {
                   Thanks
                 </div>
                 <p className="mt-3 text-lg leading-7">
-                  Got it. I'll follow up personally, this isn't an automated list.
+                  Got it. I'll read through your answers myself and follow up
+                  directly, usually within a day or two.
                 </p>
                 <a
                   href="mailto:greg@lighthousepointadv.com"
