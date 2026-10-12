@@ -663,8 +663,7 @@ export default function LighthousePointAdvisorsSite() {
                     <div className="flex gap-3">
                       <ChevronRight className="mt-[2px] h-4 w-4 shrink-0 text-slate-400" />
                       <div>
-                        Serving on the advisory board of a multi-state plumbing
-                        and industrial supply distributor
+                        Serving on the Advisory Board of Everflow Supply
                       </div>
                     </div>
                   </div>
