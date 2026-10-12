@@ -444,7 +444,7 @@ export default function LighthousePointAdvisorsSite() {
 
         <section className="border-b border-slate-200 bg-white">
           <div className="mx-auto grid max-w-7xl gap-6 px-6 py-8 text-sm text-slate-500 md:grid-cols-4">
-            <div className="font-medium text-slate-700">
+            <div>
               Trusted perspective shaped by operating experience
             </div>
             <div>Growth and performance improvement</div>
