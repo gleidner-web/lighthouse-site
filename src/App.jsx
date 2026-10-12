@@ -196,6 +196,9 @@ export default function LighthousePointAdvisorsSite() {
             <a href="#contact" className="transition hover:text-slate-900">
               Contact
             </a>
+            <a href="/assessment" className="transition hover:text-slate-900">
+              Free Readiness Check
+            </a>
             <a
               href="#contact"
               className="rounded-full bg-slate-900 px-5 py-2.5 text-white transition hover:bg-slate-800"
