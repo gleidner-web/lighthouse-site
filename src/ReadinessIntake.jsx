@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, Lock } from "lucide-react";
+import { ArrowRight, Lock, Check } from "lucide-react";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnpjboba";
 
@@ -9,81 +9,172 @@ const SECTIONS = [
   {
     dimension: "Revenue Quality",
     fields: [
-      { name: "rq_top3", label: "What percentage of revenue comes from your top 3 customers? Top 10?" },
-      { name: "rq_tenure", label: "How would you describe the tenure of your top 10 customers?" },
-      { name: "rq_recurring", label: "What share of revenue is contracted or highly recurring versus transactional?" },
+      { name: "rq_top3", label: "Revenue from top 3 customers", type: "number", suffix: "%" },
+      { name: "rq_top10", label: "Revenue from top 10 customers", type: "number", suffix: "%" },
+      {
+        name: "rq_tenure",
+        label: "Average tenure of top 10 customers",
+        type: "select",
+        options: ["Under 2 years", "2 to 5 years", "5 to 10 years", "Over 10 years"],
+      },
+      { name: "rq_recurring", label: "Revenue that's contracted or highly recurring", type: "number", suffix: "%" },
     ],
   },
   {
     dimension: "Margin Profile",
     fields: [
-      { name: "mp_margins", label: "What have gross margin and EBITDA margin been for each of the last three years?" },
-      { name: "mp_trend", label: "Trending up, down, or flat, and why?" },
-      { name: "mp_defensible", label: "How defensible are your margins against competitors?" },
+      { name: "mp_y1_gross", label: "Most recent year, gross margin", type: "number", suffix: "%" },
+      { name: "mp_y1_ebitda", label: "Most recent year, EBITDA margin", type: "number", suffix: "%" },
+      { name: "mp_y2_gross", label: "One year prior, gross margin", type: "number", suffix: "%" },
+      { name: "mp_y2_ebitda", label: "One year prior, EBITDA margin", type: "number", suffix: "%" },
+      { name: "mp_y3_gross", label: "Two years prior, gross margin", type: "number", suffix: "%" },
+      { name: "mp_y3_ebitda", label: "Two years prior, EBITDA margin", type: "number", suffix: "%" },
+      {
+        name: "mp_trend",
+        label: "Overall trend",
+        type: "select",
+        options: ["Improving", "Flat", "Declining", "Mixed"],
+      },
+      { name: "mp_trend_why", label: "Why, in a sentence", type: "textarea" },
+      {
+        name: "mp_defensible",
+        label: "How defensible are your margins against competitors?",
+        type: "select",
+        options: ["Very defensible", "Somewhat defensible", "Not very defensible"],
+      },
     ],
   },
   {
     dimension: "Working Capital",
     fields: [
-      { name: "wc_turns", label: "Current inventory turns?" },
-      { name: "wc_ar", label: "Average AR days outstanding?" },
-      { name: "wc_pct", label: "Working capital as a percentage of revenue?" },
+      { name: "wc_turns", label: "Inventory turns", type: "number" },
+      { name: "wc_ar", label: "Average AR days outstanding", type: "number", suffix: "days" },
+      { name: "wc_pct", label: "Working capital as % of revenue", type: "number", suffix: "%" },
     ],
   },
   {
     dimension: "Owner Dependence",
     fields: [
-      { name: "od_relationships", label: "Which customer or vendor relationships are tied specifically to you personally?" },
-      { name: "od_absence", label: "If you were unavailable for 30 days, what breaks? For 6 months?" },
-      { name: "od_signoff", label: "What decisions currently require your personal sign-off?" },
+      {
+        name: "od_count",
+        label: "Of your top 10 customer relationships, how many run primarily through you personally?",
+        type: "number",
+      },
+      {
+        name: "od_30day",
+        label: "If you were unavailable 30 days",
+        type: "select",
+        options: ["Nothing would break", "Minor issues", "Real problems", "A real scramble"],
+      },
+      {
+        name: "od_6month",
+        label: "If you were unavailable 6 months",
+        type: "select",
+        options: ["Nothing would break", "Minor issues", "Real problems", "A real scramble"],
+      },
+      { name: "od_signoff", label: "What decisions require your personal sign-off?", type: "textarea" },
     ],
   },
   {
     dimension: "Team Depth",
     fields: [
-      { name: "td_leaders", label: "Who are your key leaders, and what's each one's tenure?" },
-      { name: "td_stay", label: "Which would you expect to stay under new ownership?" },
-      { name: "td_number2", label: "Is there a clear #2 with real authority today?" },
+      { name: "td_leaders", label: "Key leaders and tenure (name, years)", type: "textarea" },
+      { name: "td_stay", label: "Which would you expect to stay under new ownership?", type: "textarea" },
+      {
+        name: "td_number2",
+        label: "Is there a clear #2 with real authority today?",
+        type: "select",
+        options: ["Yes", "Somewhat", "No"],
+      },
     ],
   },
   {
     dimension: "Systems and Processes",
     fields: [
-      { name: "sp_systems", label: "What ERP and CRM are you running?" },
-      { name: "sp_standard", label: "How standardized are reporting and KPIs across the business?" },
-      { name: "sp_manual", label: "Where do you rely most on manual processes or one person's institutional knowledge?" },
+      { name: "sp_erp", label: "ERP system", type: "text" },
+      { name: "sp_crm", label: "CRM system", type: "text" },
+      {
+        name: "sp_standard",
+        label: "How standardized are reporting and KPIs?",
+        type: "select",
+        options: ["Fully standardized", "Mostly standardized", "Somewhat", "Not standardized"],
+      },
+      {
+        name: "sp_manual",
+        label: "Where do you rely most on manual processes or one person's knowledge?",
+        type: "textarea",
+      },
     ],
   },
   {
     dimension: "Growth Trajectory",
     fields: [
-      { name: "gt_growth", label: "Revenue growth over the last 3 to 5 years, organic versus acquired?" },
-      { name: "gt_pipeline", label: "Forward visibility into pipeline beyond the current quarter?" },
-      { name: "gt_share", label: "Estimated share of your addressable market?" },
+      { name: "gt_growth_pct", label: "Total revenue growth, last 3 years", type: "number", suffix: "%" },
+      {
+        name: "gt_growth_source",
+        label: "Mostly from",
+        type: "select",
+        options: ["Winning more business", "A mix of growth and acquisitions", "Mostly acquisitions", "Flat or declining"],
+      },
+      {
+        name: "gt_pipeline",
+        label: "Forward pipeline visibility",
+        type: "select",
+        options: ["Full quarter or more", "Partial visibility", "Little to none"],
+      },
+      { name: "gt_share", label: "Estimated share of addressable market", type: "number", suffix: "%" },
     ],
   },
   {
     dimension: "Market Position",
     fields: [
-      { name: "mkt_competitors", label: "Your two or three biggest competitors, and how do you win or lose against them?" },
-      { name: "mkt_moat", label: "What's genuinely hard for a competitor to replicate?" },
-      { name: "mkt_suppliers", label: "How concentrated are your supplier relationships?" },
+      { name: "mkt_competitors", label: "Two or three biggest competitors", type: "text" },
+      { name: "mkt_winlose", label: "How do you typically win or lose against them?", type: "textarea" },
+      { name: "mkt_moat", label: "What's genuinely hard for a competitor to replicate?", type: "textarea" },
+      {
+        name: "mkt_suppliers",
+        label: "Supplier concentration",
+        type: "select",
+        options: ["Single supplier dependency", "A few key suppliers", "Well diversified"],
+      },
     ],
   },
   {
     dimension: "Financial Cleanliness",
     fields: [
-      { name: "fc_prepared", label: "Reviewed, audited, or internally prepared only?" },
-      { name: "fc_addbacks", label: "What add-backs would you expect toward a normalized EBITDA?" },
-      { name: "fc_confidence", label: "How confident are you those would hold up under a buyer's quality of earnings review?" },
+      {
+        name: "fc_prepared",
+        label: "Financials are",
+        type: "select",
+        options: ["Audited", "Reviewed", "Internally prepared only"],
+      },
+      { name: "fc_addbacks_amount", label: "Estimated annual add-backs", type: "number", suffix: "$" },
+      { name: "fc_addbacks_what", label: "What are they?", type: "textarea" },
+      {
+        name: "fc_confidence",
+        label: "Confidence they'd hold up under a buyer's quality of earnings review",
+        type: "select",
+        options: ["Very confident", "Somewhat confident", "Not very confident"],
+      },
     ],
   },
   {
     dimension: "Ownership Structure",
     fields: [
-      { name: "os_equity", label: "How many owners, and how is equity split?" },
-      { name: "os_minority", label: "Any minority owners, family, or outside investors?" },
-      { name: "os_buysell", label: "Is there a buy-sell agreement, and when was it last updated?" },
+      { name: "os_count", label: "Number of owners", type: "number" },
+      { name: "os_split", label: "How equity is split", type: "text" },
+      {
+        name: "os_minority",
+        label: "Minority owners, family, or outside investors?",
+        type: "select",
+        options: ["Yes", "No"],
+      },
+      {
+        name: "os_buysell",
+        label: "Buy-sell agreement in place?",
+        type: "select",
+        options: ["Yes, current", "Yes, outdated", "No"],
+      },
     ],
   },
 ];
@@ -147,6 +238,62 @@ function PasswordGate({ onUnlock }) {
   );
 }
 
+function SelectField({ field, value, onChange }) {
+  return (
+    <div className="flex flex-wrap gap-2">
+      {field.options.map((opt) => {
+        const selected = value === opt;
+        return (
+          <button
+            key={opt}
+            type="button"
+            onClick={() => onChange(opt)}
+            className={`inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-sm transition ${
+              selected
+                ? "border-slate-900 bg-slate-900 text-white"
+                : "border-slate-200 text-slate-700 hover:border-slate-400"
+            }`}
+          >
+            {selected && <Check className="h-3.5 w-3.5" />}
+            {opt}
+          </button>
+        );
+      })}
+      <input type="hidden" name={field.name} value={value || ""} readOnly />
+    </div>
+  );
+}
+
+function Field({ field, value, onChange }) {
+  if (field.type === "select") {
+    return <SelectField field={field} value={value} onChange={onChange} />;
+  }
+  if (field.type === "textarea") {
+    return (
+      <textarea
+        name={field.name}
+        rows={2}
+        value={value || ""}
+        onChange={(e) => onChange(e.target.value)}
+        className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-slate-900"
+      />
+    );
+  }
+  // text or number
+  return (
+    <div className="flex items-center gap-2">
+      <input
+        type={field.type === "number" ? "number" : "text"}
+        name={field.name}
+        value={value || ""}
+        onChange={(e) => onChange(e.target.value)}
+        className="w-full max-w-[220px] rounded-2xl border border-slate-200 px-4 py-2.5 text-sm text-slate-900 outline-none transition focus:border-slate-900"
+      />
+      {field.suffix && <span className="text-sm text-slate-400">{field.suffix}</span>}
+    </div>
+  );
+}
+
 export default function ReadinessIntake() {
   const [unlocked, setUnlocked] = React.useState(false);
   const [submitted, setSubmitted] = React.useState(false);
@@ -154,6 +301,7 @@ export default function ReadinessIntake() {
   const [submitError, setSubmitError] = React.useState(false);
   const [name, setName] = React.useState("");
   const [company, setCompany] = React.useState("");
+  const [answers, setAnswers] = React.useState({});
 
   React.useEffect(() => {
     document.title = "Readiness Intake | Lighthouse Point Advisors";
@@ -163,6 +311,10 @@ export default function ReadinessIntake() {
     document.head.appendChild(meta);
     return () => document.head.removeChild(meta);
   }, []);
+
+  function setAnswer(name, value) {
+    setAnswers((prev) => ({ ...prev, [name]: value }));
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -220,9 +372,8 @@ export default function ReadinessIntake() {
 
       <main className="mx-auto max-w-3xl px-6 py-12">
         <p className="mb-10 text-base leading-7 text-slate-600">
-          Answer what you can, in as much or as little detail as you have handy.
-          Estimates are fine, this isn't meant to take hours. Anything you skip,
-          we'll just cover live.
+          Best estimates are fine throughout, this isn't an audit. Click where you
+          can, type where you need to. Anything you skip, we'll just cover live.
         </p>
 
         <form onSubmit={handleSubmit}>
@@ -259,17 +410,13 @@ export default function ReadinessIntake() {
                 <div className="mt-5 space-y-5">
                   {section.fields.map((field) => (
                     <div key={field.name}>
-                      <label
-                        htmlFor={field.name}
-                        className="block text-sm leading-6 text-slate-700"
-                      >
+                      <label className="mb-2 block text-sm leading-6 text-slate-700">
                         {field.label}
                       </label>
-                      <textarea
-                        id={field.name}
-                        name={field.name}
-                        rows={2}
-                        className="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-slate-900"
+                      <Field
+                        field={field}
+                        value={answers[field.name]}
+                        onChange={(v) => setAnswer(field.name, v)}
                       />
                     </div>
                   ))}
