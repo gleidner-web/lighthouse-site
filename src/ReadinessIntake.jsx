@@ -5,6 +5,27 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnpjboba";
 
 const SHARED_PASSWORD = "LHPADV";
 
+const COMPANY_OVERVIEW = [
+  { name: "co_founded", label: "Year founded", type: "number" },
+  { name: "co_employees", label: "Number of employees", type: "number" },
+  { name: "co_locations", label: "Locations / facilities", type: "text" },
+  { name: "co_products", label: "Primary products or services", type: "textarea" },
+  { name: "co_revenue", label: "Annual revenue, most recent year", type: "number", suffix: "$" },
+  { name: "co_website", label: "Website", type: "text" },
+];
+
+const GOALS_CONTEXT = [
+  { name: "gc_driving", label: "What's driving this conversation right now?", type: "textarea" },
+  { name: "gc_outcome", label: "What does a good outcome look like to you?", type: "textarea" },
+  {
+    name: "gc_timeline",
+    label: "Rough timeline",
+    type: "select",
+    options: ["Just exploring", "6 to 12 months", "1 to 2 years", "2+ years"],
+  },
+  { name: "gc_other", label: "Anything else worth knowing before we talk?", type: "textarea" },
+];
+
 const SECTIONS = [
   {
     dimension: "Revenue Quality",
@@ -415,6 +436,26 @@ export default function ReadinessIntake() {
             />
           </div>
 
+          <div className="mb-10 rounded-3xl border border-slate-200 bg-slate-50 p-7">
+            <h2 className="text-lg font-semibold tracking-tight text-slate-900">
+              Company Overview
+            </h2>
+            <div className="mt-5 space-y-5">
+              {COMPANY_OVERVIEW.map((field) => (
+                <div key={field.name}>
+                  <label className="mb-2 block text-sm leading-6 text-slate-700">
+                    {field.label}
+                  </label>
+                  <Field
+                    field={field}
+                    value={answers[field.name]}
+                    onChange={(v) => setAnswer(field.name, v)}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="space-y-10">
             {SECTIONS.map((section) => (
               <div
@@ -440,6 +481,52 @@ export default function ReadinessIntake() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-10 rounded-3xl border border-slate-200 bg-slate-900 p-7 text-white">
+            <h2 className="text-lg font-semibold tracking-tight text-white">
+              Goals and Context
+            </h2>
+            <div className="mt-5 space-y-5">
+              {GOALS_CONTEXT.map((field) => (
+                <div key={field.name}>
+                  <label className="mb-2 block text-sm leading-6 text-white/80">
+                    {field.label}
+                  </label>
+                  {field.type === "select" ? (
+                    <div className="flex flex-wrap gap-2">
+                      {field.options.map((opt) => {
+                        const selected = answers[field.name] === opt;
+                        return (
+                          <button
+                            key={opt}
+                            type="button"
+                            onClick={() => setAnswer(field.name, opt)}
+                            className={`inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-sm transition ${
+                              selected
+                                ? "border-white bg-white text-slate-900"
+                                : "border-white/30 text-white hover:border-white/60"
+                            }`}
+                          >
+                            {selected && <Check className="h-3.5 w-3.5" />}
+                            {opt}
+                          </button>
+                        );
+                      })}
+                      <input type="hidden" name={field.name} value={answers[field.name] || ""} readOnly />
+                    </div>
+                  ) : (
+                    <textarea
+                      name={field.name}
+                      rows={2}
+                      value={answers[field.name] || ""}
+                      onChange={(e) => setAnswer(field.name, e.target.value)}
+                      className="w-full rounded-2xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/40 focus:border-white/50"
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
           <button
