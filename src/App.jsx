@@ -365,9 +365,9 @@ export default function LighthousePointAdvisorsSite() {
 
                     <div className="border-b border-white/10 pb-4">
                       <div className="text-3xl font-semibold tracking-tight text-white">
-                        National scale
+                        10 Greenfield Sites
                       </div>
-                      <div className="mt-1 leading-6">Expanded operating footprint</div>
+                      <div className="mt-1 leading-6">New distribution centers launched nationwide</div>
                     </div>
 
                     <div className="border-b border-white/10 pb-4">
@@ -617,7 +617,11 @@ export default function LighthousePointAdvisorsSite() {
 
                     <div className="flex gap-3">
                       <ChevronRight className="mt-[2px] h-4 w-4 shrink-0 text-slate-400" />
-                      <div>Expanded the company nationwide</div>
+                      <div>
+                        Oversaw the launch of{" "}
+                        <span className="font-semibold text-slate-900">10 greenfield distribution centers</span>{" "}
+                        across the United States
+                      </div>
                     </div>
 
                     <div className="flex gap-3">
