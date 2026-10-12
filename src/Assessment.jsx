@@ -348,6 +348,16 @@ export default function Assessment() {
                 <form onSubmit={handleSubmit} className="mt-6 space-y-3">
                   <input type="hidden" name="result" value={tier.label} />
                   <input type="hidden" name="score" value={`${overallScore} / 40`} />
+                  {QUESTIONS.map((q, i) => (
+                    <input
+                      key={i}
+                      type="hidden"
+                      name={`q${i + 1}_${q.dimension.replace(/\s+/g, "_").toLowerCase()}`}
+                      value={`${q.text} -- ${
+                        answers[i] != null ? q.options[answers[i]].label : "Not answered"
+                      }`}
+                    />
+                  ))}
                   <input
                     type="text"
                     name="company"
