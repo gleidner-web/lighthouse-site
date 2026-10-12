@@ -148,7 +148,7 @@ export default function Assessment() {
   const [submitError, setSubmitError] = React.useState(false);
 
   React.useEffect(() => {
-    document.title = "Owner Readiness Check | Lighthouse Point Advisors";
+    document.title = "Business Health Scorecard | Lighthouse Point Advisors";
   }, []);
 
   const total = QUESTIONS.length;
@@ -239,14 +239,18 @@ export default function Assessment() {
           <>
             <div className="mb-10">
               <div className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
-                Owner Readiness Check
+                Business Health Scorecard
               </div>
               <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
-                How would your business look to a buyer today?
+                A ten-question read on how your business actually stands.
               </h1>
               <p className="mt-4 text-base leading-7 text-slate-600">
-                Ten quick questions, about two minutes. No company name or financials
-                required to get your score.
+                Two minutes, ten questions. This looks at your business through the
+                same lens a buyer, lender, or new partner would, which turns out to
+                be one of the more honest ways to measure real health, whether
+                you're thinking about a sale, planning to hand it to family, or just
+                want a clear picture of where things stand. No company name or
+                financials required to get your score.
               </p>
             </div>
 

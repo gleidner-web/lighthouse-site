@@ -197,7 +197,7 @@ export default function LighthousePointAdvisorsSite() {
               Contact
             </a>
             <a href="/assessment" className="transition hover:text-slate-900">
-              Free Readiness Check
+              Free Health Scorecard
             </a>
             <a
               href="#contact"
