@@ -6,9 +6,13 @@ import {
   Mail,
   Linkedin,
   CheckCircle2,
+  Menu,
+  X,
 } from "lucide-react";
 
 export default function LighthousePointAdvisorsSite() {
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+
   React.useEffect(() => {
     document.title = "Lighthouse Point Advisors | Strategic Advisory Services for CEOs";
 
@@ -206,7 +210,63 @@ export default function LighthousePointAdvisorsSite() {
               Start a Conversation
             </a>
           </nav>
+
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen((v) => !v)}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            className="inline-flex items-center justify-center rounded-full border border-slate-200 p-2.5 text-slate-700 md:hidden"
+          >
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
+
+        {mobileMenuOpen && (
+          <nav className="flex flex-col gap-1 border-t border-slate-200 bg-white px-6 py-4 text-sm text-slate-600 md:hidden">
+            <a
+              href="#who-we-help"
+              onClick={() => setMobileMenuOpen(false)}
+              className="rounded-xl px-3 py-2.5 transition hover:bg-slate-50 hover:text-slate-900"
+            >
+              Who We Help
+            </a>
+            <a
+              href="#services"
+              onClick={() => setMobileMenuOpen(false)}
+              className="rounded-xl px-3 py-2.5 transition hover:bg-slate-50 hover:text-slate-900"
+            >
+              Services
+            </a>
+            <a
+              href="#founder"
+              onClick={() => setMobileMenuOpen(false)}
+              className="rounded-xl px-3 py-2.5 transition hover:bg-slate-50 hover:text-slate-900"
+            >
+              Founder
+            </a>
+            <a
+              href="#contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="rounded-xl px-3 py-2.5 transition hover:bg-slate-50 hover:text-slate-900"
+            >
+              Contact
+            </a>
+            <a
+              href="/assessment"
+              onClick={() => setMobileMenuOpen(false)}
+              className="rounded-xl px-3 py-2.5 font-medium text-slate-900 transition hover:bg-slate-50"
+            >
+              Free Health Scorecard
+            </a>
+            <a
+              href="#contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="mt-2 rounded-full bg-slate-900 px-5 py-3 text-center text-white transition hover:bg-slate-800"
+            >
+              Start a Conversation
+            </a>
+          </nav>
+        )}
       </header>
 
       <main>
