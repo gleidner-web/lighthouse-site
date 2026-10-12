@@ -50,6 +50,23 @@ const SECTIONS = [
       { name: "wc_turns", label: "Inventory turns", type: "number" },
       { name: "wc_ar", label: "Average AR days outstanding", type: "number", suffix: "days" },
       { name: "wc_pct", label: "Working capital as % of revenue", type: "number", suffix: "%" },
+      {
+        name: "wc_growth_index",
+        label: "Growth potential index: profit divided by (inventory + AR - AP)",
+        type: "number",
+      },
+      {
+        name: "wc_breakeven",
+        label: "Breakeven sensitivity: how far sales could decline before you'd break even",
+        type: "number",
+        suffix: "%",
+      },
+      {
+        name: "wc_defensive_interval",
+        label: "Defensive interval: how long you could operate on cash alone",
+        type: "number",
+        suffix: "days",
+      },
     ],
   },
   {
