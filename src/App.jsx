@@ -96,7 +96,7 @@ export default function LighthousePointAdvisorsSite() {
   ];
 
   const whoWeHelp = [
-    "Founder-led and family-influenced businesses reaching a more demanding stage of growth",
+    "Founder-led and family-influenced distribution and industrial businesses reaching a more demanding stage of growth",
     "CEOs preparing for a transaction, recapitalization, or ownership transition",
     "Leadership teams that need stronger execution, structure, and operating discipline",
     "Private equity-backed management teams adjusting to a higher-performance environment",
@@ -396,6 +396,53 @@ export default function LighthousePointAdvisorsSite() {
         </section>
 
         <section className="border-b border-slate-200 bg-white">
+          <div className="mx-auto max-w-7xl px-6 py-16">
+            <div className="grid gap-6 md:grid-cols-2">
+              <div
+                data-reveal
+                className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <div className="text-sm font-semibold uppercase tracking-[0.18em] text-[#caa55b]">
+                  Thinking About What's Next
+                </div>
+                <p className="mt-3 text-lg leading-7 text-slate-700">
+                  Considering a sale, a transition to family or management, or
+                  just want an honest read on where a pipe, valve, fitting, or
+                  distribution business actually stands.
+                </p>
+                <a
+                  href="/assessment"
+                  className="mt-5 inline-flex items-center gap-2 font-medium text-slate-900 transition hover:gap-3"
+                >
+                  Take the free Business Health Scorecard
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+
+              <div
+                data-reveal
+                className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <div className="text-sm font-semibold uppercase tracking-[0.18em] text-[#caa55b]">
+                  Leading Through Growth or New Ownership
+                </div>
+                <p className="mt-3 text-lg leading-7 text-slate-700">
+                  Running point for a leadership team navigating performance
+                  pressure, a new sponsor, or a demanding stretch of growth.
+                </p>
+                <a
+                  href="#contact"
+                  className="mt-5 inline-flex items-center gap-2 font-medium text-slate-900 transition hover:gap-3"
+                >
+                  Start a conversation
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-b border-slate-200 bg-white">
           <div className="mx-auto grid max-w-7xl gap-6 px-6 py-8 text-sm text-slate-500 md:grid-cols-4">
             <div className="font-medium text-slate-700">
               Trusted perspective shaped by operating experience
@@ -556,7 +603,7 @@ export default function LighthousePointAdvisorsSite() {
 
                 <div className="mt-5 space-y-3 text-sm text-slate-700">
                   <div className="text-lg font-semibold leading-snug text-slate-900">
-                    Led a national industrial distribution platform over two decades
+                    Led a national pipe, valve, and fitting (PVF) distribution platform over two decades
                   </div>
 
                   <div className="space-y-3">
@@ -596,6 +643,28 @@ export default function LighthousePointAdvisorsSite() {
                       <ChevronRight className="mt-[2px] h-4 w-4 shrink-0 text-slate-400" />
                       <div className="font-medium text-slate-900">
                         Family Owned and Operated → Private Equity → Public Company
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6 border-t border-slate-100 pt-5">
+                  <div className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    Current Work
+                  </div>
+                  <div className="mt-4 space-y-3 text-sm text-slate-700">
+                    <div className="flex gap-3">
+                      <ChevronRight className="mt-[2px] h-4 w-4 shrink-0 text-slate-400" />
+                      <div>
+                        Advising the commercial organization of a national HDPE
+                        pipe manufacturer through a post-acquisition reorganization
+                      </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <ChevronRight className="mt-[2px] h-4 w-4 shrink-0 text-slate-400" />
+                      <div>
+                        Serving on the advisory board of a multi-state plumbing
+                        and industrial supply distributor
                       </div>
                     </div>
                   </div>
