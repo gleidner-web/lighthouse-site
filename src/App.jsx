@@ -1,5 +1,6 @@
 import React from "react";
 import gregPhoto from "./greg.jpeg";
+import lighthouseLogo from "./lighthouse-logo.png";
 import {
   ArrowRight,
   ChevronRight,
@@ -129,77 +130,11 @@ export default function LighthousePointAdvisorsSite() {
       <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <a href="#" className="flex items-center gap-3">
-            <svg
-              width="178"
-              height="40"
-              viewBox="0 0 178 40"
-              className="shrink-0"
-              aria-label="Lighthouse Point Advisors logo"
-              role="img"
-            >
-              <defs>
-                <linearGradient id="lpaBeamRight" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#caa55b" stopOpacity="0.95" />
-                  <stop offset="70%" stopColor="#caa55b" stopOpacity="0.35" />
-                  <stop offset="100%" stopColor="#caa55b" stopOpacity="0" />
-                </linearGradient>
-                <linearGradient id="lpaBeamLeft" x1="1" y1="0" x2="0" y2="0">
-                  <stop offset="0%" stopColor="#caa55b" stopOpacity="0.95" />
-                  <stop offset="70%" stopColor="#caa55b" stopOpacity="0.35" />
-                  <stop offset="100%" stopColor="#caa55b" stopOpacity="0" />
-                </linearGradient>
-              </defs>
-
-              <g transform="translate(1,1)">
-                <rect x="0" y="26" width="30" height="2.2" rx="1.1" fill="#0f172a" />
-                <rect x="14" y="11" width="2.2" height="15" rx="1.1" fill="#0f172a" />
-                <rect x="11.4" y="8.2" width="7.4" height="2.1" rx="1" fill="#0f172a" />
-                <circle
-                  cx="15.1"
-                  cy="5.8"
-                  r="2.2"
-                  fill="#ffffff"
-                  stroke="#0f172a"
-                  strokeWidth="1"
-                />
-                <rect
-                  x="4"
-                  y="5.3"
-                  width="22.2"
-                  height="1"
-                  rx="0.5"
-                  fill="#0f172a"
-                  opacity="0.72"
-                />
-                <polygon points="16.7,5.8 31,1.9 31,9.7" fill="url(#lpaBeamRight)" />
-                <polygon points="13.5,5.8 0,1.9 0,9.7" fill="url(#lpaBeamLeft)" />
-              </g>
-
-              <g transform="translate(45,2)">
-                <text
-                  x="0"
-                  y="15"
-                  fill="#111827"
-                  fontSize="16"
-                  fontWeight="600"
-                  letterSpacing="-0.02em"
-                  fontFamily="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-                >
-                  Lighthouse Point
-                </text>
-                <text
-                  x="0"
-                  y="28"
-                  fill="#caa55b"
-                  fontSize="9.5"
-                  fontWeight="500"
-                  letterSpacing="0.22em"
-                  fontFamily="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-                >
-                  ADVISORS
-                </text>
-              </g>
-            </svg>
+            <img
+              src={lighthouseLogo}
+              alt="Lighthouse Point Advisors logo"
+              className="h-10 w-auto shrink-0 md:h-11"
+            />
           </a>
 
           <nav className="hidden items-center gap-8 text-sm text-slate-600 md:flex">

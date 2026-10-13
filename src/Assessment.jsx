@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRight, ChevronRight, Mail } from "lucide-react";
+import lighthouseLogo from "./lighthouse-logo.png";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/moejnkrb";
 
@@ -215,15 +216,11 @@ export default function Assessment() {
       <header className="border-b border-slate-200/80 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-5">
           <a href="/" className="flex items-center gap-2">
-            <svg width="28" height="28" viewBox="0 0 30 30" aria-hidden="true">
-              <rect x="0" y="26" width="30" height="2.2" rx="1.1" fill="#0f172a" />
-              <rect x="14" y="11" width="2.2" height="15" rx="1.1" fill="#0f172a" />
-              <rect x="11.4" y="8.2" width="7.4" height="2.1" rx="1" fill="#0f172a" />
-              <circle cx="15.1" cy="5.8" r="2.2" fill="#ffffff" stroke="#0f172a" strokeWidth="1" />
-            </svg>
-            <span className="text-sm font-semibold tracking-tight text-slate-900">
-              Lighthouse Point Advisors
-            </span>
+            <img
+              src={lighthouseLogo}
+              alt="Lighthouse Point Advisors"
+              className="h-9 w-auto"
+            />
           </a>
           <a
             href="/"
