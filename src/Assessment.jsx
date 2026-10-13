@@ -86,12 +86,12 @@ const QUESTIONS = [
   },
   {
     dimension: "Growth Trajectory",
-    text: "Over the last three years, has your growth mostly come from winning more business, or from buying other companies?",
+    text: "Over the last three years, where has your growth mostly come from?",
     options: [
-      { label: "Steady growth from winning more business", points: 4 },
-      { label: "A mix of growth and acquiring other companies", points: 3 },
-      { label: "Mostly flat", points: 2 },
-      { label: "Declining", points: 1 },
+      { label: "Growing relationships with existing customers", points: 4 },
+      { label: "Winning new customers", points: 4 },
+      { label: "A mix of organic growth and buying other companies", points: 3 },
+      { label: "Flat or declining", points: 1 },
     ],
   },
   {
