@@ -109,6 +109,21 @@ export default function LighthousePointAdvisorsSite() {
     "Support management teams through moments that carry real pressure",
   ];
 
+  const testimonials = [
+    {
+      quote:
+        "Lighthouse Point brings a fresh perspective to your organization while facilitating conversations that allow every employee to be heard and share their brightest ideas. Lighthouse Point drives action and results.",
+      name: "Chief Commercial Officer",
+      title: "National HDPE Pipe Manufacturer",
+    },
+    {
+      quote:
+        "I have known Greg as a CEO, equity partner, and professional colleague since 2012. Over the past fourteen years Greg has developed from a young, entrepreneurial CEO to a professional executive with battle-tested experience in both private equity and publicly traded operating environments. Greg's success stems from his incredible intellectual curiosity, clear and practical strategic planning, unwavering focus on top line growth and margin enhancement, and unique interpersonal skills that attract and motivate teams.",
+      name: "Joe Machado",
+      title: "Partner, MPE Partners",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur">
@@ -727,6 +742,38 @@ export default function LighthousePointAdvisorsSite() {
                   Email Greg
                 </a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-slate-200 bg-slate-50">
+          <div className="mx-auto max-w-7xl px-6 py-24">
+            <div data-reveal className="mb-14 max-w-3xl">
+              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
+                What People Say
+              </div>
+              <h2 className="mt-4 text-4xl font-semibold tracking-tight text-slate-900">
+                Working with Lighthouse Point.
+              </h2>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2">
+              {testimonials.map((t, idx) => (
+                <div
+                  key={idx}
+                  data-reveal
+                  className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm"
+                >
+                  <div className="h-1 w-10 rounded-full bg-[#caa55b]" />
+                  <p className="mt-6 text-lg leading-8 text-slate-700">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <div className="mt-6 border-t border-slate-100 pt-5">
+                    <div className="font-semibold text-slate-900">{t.name}</div>
+                    <div className="text-sm text-slate-500">{t.title}</div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
