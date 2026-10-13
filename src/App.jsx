@@ -322,6 +322,14 @@ export default function LighthousePointAdvisorsSite() {
                   </a>
 
                   <a
+                    href="/assessment"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3.5 text-white transition hover:bg-white/10"
+                  >
+                    Take the Free Health Scorecard
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+
+                  <a
                     href="#founder"
                     className="rounded-full border border-white/20 px-6 py-3.5 text-white transition hover:bg-white/10"
                   >
