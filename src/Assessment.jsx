@@ -4,6 +4,16 @@ import lighthouseLogo from "./lighthouse-logo.png";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/moejnkrb";
 
+// Optional tag from personal links, e.g. /assessment?r=darren
+const REF = (() => {
+  try {
+    const r = new URLSearchParams(window.location.search).get("r") || "";
+    return r.replace(/[^\w.-]/g, "").slice(0, 40);
+  } catch {
+    return "";
+  }
+})();
+
 const QUESTIONS = [
   {
     dimension: "Owner Dependence",
@@ -182,6 +192,35 @@ export default function Assessment() {
   const weakest = sortedDimensions.slice(0, 2);
   const tier = scoreToTier(overallScore);
 
+  const answerFields = QUESTIONS.map((q, i) => [
+    `q${i + 1}_${q.dimension.replace(/\s+/g, "_").toLowerCase()}`,
+    `${q.text} -- ${
+      answers[i] != null ? q.options[answers[i]].label : "Not answered"
+    }`,
+  ]);
+
+  // Record every completed scorecard, even if the visitor never leaves an email.
+  const autoSent = React.useRef(false);
+  React.useEffect(() => {
+    if (!done || autoSent.current) return;
+    autoSent.current = true;
+    const data = new FormData();
+    data.append(
+      "_subject",
+      `Scorecard completed (${REF || "anonymous"}): ${tier.label}, ${overallScore}/40`
+    );
+    data.append("submission_type", "Completed, no email (automatic)");
+    data.append("ref", REF || "none");
+    data.append("result", tier.label);
+    data.append("score", `${overallScore} / 40`);
+    answerFields.forEach(([name, value]) => data.append(name, value));
+    fetch(FORMSPREE_ENDPOINT, {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body: data,
+    }).catch(() => {});
+  }, [done]);
+
   function selectAnswer(qIndex, optIndex) {
     setAnswers((prev) => ({ ...prev, [qIndex]: optIndex }));
     if (step < total - 1) {
@@ -248,6 +287,11 @@ export default function Assessment() {
                 you're thinking about a sale, planning to hand it to family, or just
                 want a clear picture of where things stand. No company name or
                 financials required to get your score.
+              </p>
+              <p className="mt-3 text-sm leading-6 text-slate-500">
+                {REF
+                  ? "When you finish, your answers come straight to me. Since I sent you this link personally, I'll know they're yours."
+                  : "When you finish, your answers come straight to me so I can see how owners are scoring. Your name, company, and email don't, unless you choose to add them."}
               </p>
             </div>
 
@@ -330,30 +374,34 @@ export default function Assessment() {
               </div>
             </div>
 
+            <p className="mt-4 text-sm leading-6 text-slate-500">
+              {REF
+                ? "Your answers have come to me. Since I sent you this link personally, I'll know they're yours."
+                : "Your answers have come to me anonymously. Your name, company, and email don't, unless you add them below."}
+            </p>
+
             {!submitted ? (
               <div className="mt-8 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
                 <div className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
-                  Get the Full Picture
+                  Want a Personal Read?
                 </div>
                 <p className="mt-3 text-base leading-7 text-slate-600">
-                  This is the two-minute version. The real assessment covers ten
-                  dimensions in depth, with a written scorecard and a 12 to 18 month
-                  plan to close the gaps that matter most. Leave your email and I'll
-                  send you a personal note on what I'd look at first for a business
-                  like yours.
+                  Send your results to me and I'll look them over myself. Add your
+                  email if you'd like a short note back on what I'd look at first
+                  for a business like yours. No obligation, and no mailing list.
                 </p>
                 <form onSubmit={handleSubmit} className="mt-6 space-y-3">
+                  <input
+                    type="hidden"
+                    name="_subject"
+                    value={`Scorecard shared (${REF || "no link tag"}): ${tier.label}, ${overallScore}/40`}
+                  />
+                  <input type="hidden" name="submission_type" value="Sent by visitor" />
+                  <input type="hidden" name="ref" value={REF || "none"} />
                   <input type="hidden" name="result" value={tier.label} />
                   <input type="hidden" name="score" value={`${overallScore} / 40`} />
-                  {QUESTIONS.map((q, i) => (
-                    <input
-                      key={i}
-                      type="hidden"
-                      name={`q${i + 1}_${q.dimension.replace(/\s+/g, "_").toLowerCase()}`}
-                      value={`${q.text} -- ${
-                        answers[i] != null ? q.options[answers[i]].label : "Not answered"
-                      }`}
-                    />
+                  {answerFields.map(([name, value]) => (
+                    <input key={name} type="hidden" name={name} value={value} />
                   ))}
                   <input
                     type="text"
@@ -366,8 +414,7 @@ export default function Assessment() {
                   <input
                     type="email"
                     name="email"
-                    required
-                    placeholder="Email address"
+                    placeholder="Email address (optional)"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full rounded-2xl border border-slate-200 px-5 py-3.5 text-slate-900 outline-none transition focus:border-slate-900"
@@ -377,7 +424,7 @@ export default function Assessment() {
                     disabled={submitting}
                     className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-3.5 font-medium text-white transition hover:bg-slate-800 disabled:opacity-60"
                   >
-                    {submitting ? "Sending..." : "Send Me the Full Picture"}
+                    {submitting ? "Sending..." : "Send My Results to Greg"}
                     <ArrowRight className="h-4 w-4" />
                   </button>
                   {submitError && (
@@ -397,8 +444,9 @@ export default function Assessment() {
                   Thanks
                 </div>
                 <p className="mt-3 text-lg leading-7">
-                  Got it. I'll read through your answers myself and follow up
-                  directly, usually within a day or two.
+                  {email
+                    ? "Got it. I'll read through your answers myself and follow up directly, usually within a day or two."
+                    : "Got it, thanks. I'll read through your answers myself. If you'd like to talk them through, just email me."}
                 </p>
                 <a
                   href="mailto:greg@lighthousepointadv.com"
@@ -415,6 +463,7 @@ export default function Assessment() {
                 setAnswers({});
                 setStep(0);
                 setSubmitted(false);
+                autoSent.current = false;
               }}
               className="mt-8 text-sm text-slate-400 transition hover:text-slate-600"
             >
