@@ -123,6 +123,12 @@ export default function LighthousePointAdvisorsSite() {
       name: "Joe Machado",
       title: "Partner, MPE Partners",
     },
+    {
+      quote:
+        "I had the pleasure of working with Greg when I was CFO at Merfish United, starting back in 2020. He is an incredibly strategic leader who balances forward thinking with practical feasibility to ensure ideas actually get delivered. His confident yet collaborative style shaped a high-performing senior leadership team, one where people felt heard, challenged, and accountable to each other. From the finance seat, I saw that translate directly into results. I would jump at the chance to work with Greg again, and I recommend Lighthouse Point Advisors without hesitation.",
+      name: "Bobby Bell",
+      title: "Former CFO, Merfish United",
+    },
   ];
 
   return (
@@ -700,7 +706,7 @@ export default function LighthousePointAdvisorsSite() {
               </h2>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-2">
+            <div className="grid gap-8 lg:grid-cols-3">
               {testimonials.map((t, idx) => (
                 <div
                   key={idx}
